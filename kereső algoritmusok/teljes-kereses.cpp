@@ -19,10 +19,24 @@ void Search(const std::vector<int>& A, int value)
     }
 }
 
+char* SearchWithIterator(const std::vector<int>& A, int value)
+{
+    for(auto i = A.begin(); i != A.end(); ++i)
+    {
+        if(*i == value)
+        {
+            return "Got it!";
+        }
+    }
+    return "Doesn't contain the value!";
+}
+
 int main()
 {
     std::vector<int> vector = {1,3,5,2,6,9};
     
     Search(vector, 9);
+    
+    std::cout << SearchWithIterator(vector, 10);
     
 }
